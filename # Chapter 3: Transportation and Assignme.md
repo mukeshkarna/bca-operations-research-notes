@@ -655,11 +655,134 @@ Worker4   24     20      M     24
 
 Apply the Hungarian method, treating 'M' values as prohibitively high costs.
 
-**Final Assignment:**
-- Worker1 → Task2
-- Worker2 → Task4
-- Worker3 → Task3
-- Worker4 → Task1
+# Infeasible Assignment Problem Solution Using Hungarian Method
+
+## Given Problem:
+```
+        Task1  Task2  Task3  Task4
+Worker1   20     15     22     M
+Worker2   18      M     26     18
+Worker3    M     18     20     22
+Worker4   24     20      M     24
+```
+Where M = Very large number (infinity/impossible assignment)
+
+## Step 1: Convert to Standard Form
+Since this is an infeasible assignment problem with some impossible assignments (M), we need to handle these carefully. Let's replace M with a very large number (say 999) for calculation purposes.
+
+```
+        Task1  Task2  Task3  Task4
+Worker1   20     15     22    999
+Worker2   18    999     26     18
+Worker3  999     18     20     22
+Worker4   24     20    999     24
+```
+
+## Step 2: Row Reduction
+Subtract the minimum value in each row from all elements in that row.
+
+**Row minimums:**
+- Row 1: min = 15
+- Row 2: min = 18  
+- Row 3: min = 18
+- Row 4: min = 20
+
+**After row reduction:**
+```
+        Task1  Task2  Task3  Task4
+Worker1    5      0      7    984
+Worker2    0    981      8      0
+Worker3  981      0      2      4
+Worker4    4      0    979      4
+```
+
+## Step 3: Column Reduction
+Subtract the minimum value in each column from all elements in that column.
+
+**Column minimums:**
+- Column 1: min = 0
+- Column 2: min = 0
+- Column 3: min = 2
+- Column 4: min = 0
+
+**After column reduction:**
+```
+        Task1  Task2  Task3  Task4
+Worker1    5      0      5    984
+Worker2    0    981      6      0
+Worker3  981      0      0      4
+Worker4    4      0    977      4
+```
+
+## Step 4: Cover All Zeros with Minimum Lines
+We need to cover all zeros using the minimum number of horizontal and vertical lines.
+
+**Covering zeros:**
+- Line through Row 2 (covers zeros at Task1 and Task4)
+- Line through Row 3 (covers zeros at Task2 and Task3)
+- Line through Column 2 (covers remaining zero in Row 1 and Row 4)
+
+**Total lines needed: 3**
+
+Since we have 4 rows/columns and only need 3 lines to cover all zeros, we don't have an optimal solution yet.
+
+## Step 5: Create Additional Zeros
+Find the smallest uncovered element = 4
+
+Subtract 4 from all uncovered elements and add 4 to elements covered by two lines:
+
+```
+        Task1  Task2  Task3  Task4
+Worker1    1      0      1    984
+Worker2    0    985      6      0
+Worker3  981      4      0      4
+Worker4    0      0    973      0
+```
+
+## Step 6: Cover Zeros Again
+Now we can cover all zeros with 4 lines:
+- Row 2: covers (1,1), (1,4)
+- Row 4: covers (4,1), (4,2), (4,4)
+- Column 2: covers (1,2), (3,2)
+- Column 3: covers (3,3)
+
+We need exactly 4 lines = number of rows, so we have an optimal solution.
+
+## Step 7: Find Optimal Assignment
+Looking for an assignment where each row and column has exactly one assignment:
+
+**Possible assignments:**
+- Worker 1 → Task 2 (cost = 15)
+- Worker 2 → Task 1 (cost = 18)
+- Worker 3 → Task 3 (cost = 20)
+- Worker 4 → Task 4 (cost = 24)
+
+## Step 8: Check Feasibility
+**This assignment is FEASIBLE because:**
+- Worker 1 → Task 2: Original cost = 15 ✓
+- Worker 2 → Task 1: Original cost = 18 ✓
+- Worker 3 → Task 3: Original cost = 20 ✓
+- Worker 4 → Task 4: Original cost = 24 ✓
+
+None of these assignments involve the impossible combinations (M).
+
+## Final Solution:
+**Optimal Assignment:**
+- Worker 1 assigned to Task 2 (Cost: 15)
+- Worker 2 assigned to Task 1 (Cost: 18)
+- Worker 3 assigned to Task 3 (Cost: 20)
+- Worker 4 assigned to Task 4 (Cost: 24)
+
+**Total Minimum Cost = 15 + 18 + 20 + 24 = 77**
+
+## Note on "Infeasible" Assignment Problems:
+This problem was actually **feasible** because we found a complete assignment without using any impossible combinations (M). 
+
+An assignment problem becomes **truly infeasible** when:
+1. No complete assignment exists without using impossible combinations, OR
+2. The structure of constraints makes it impossible to assign all workers to tasks
+
+In this case, the Hungarian method successfully found a feasible optimal solution avoiding all the M (impossible) entries.
 
 ### 3. Maximization in Assignment Problems
 
