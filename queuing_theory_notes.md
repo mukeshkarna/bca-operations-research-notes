@@ -6,19 +6,35 @@
 
 Queuing theory is a mathematical study of waiting lines or queues. It involves the analysis of several related processes including arrival at the queue, waiting in the queue, and being served by the server at the front of the queue. The theory enables the mathematical analysis of various processes, including arriving at the queue, waiting in the queue, and service at the facility. Queuing theory has applications in a wide variety of situations such as customer service centers, telecommunications, traffic engineering, computing, and the design of factories, shops, offices, and hospitals.
 
+
+A common situation that occurs in everyday life is that of waiting in a line either at bus stops, petrol pumps, restaurants, ticket booths, doctors’ clinics, bank counters, traffic lights and so on. Queues (waiting lines) are also found in workshops where the machines wait to be repaired; at a tool crib where the mechanics wait to receive tools; in a warehouse where items wait to be used, incoming calls wait to mature in the telephone exchange, trucks wait to be unloaded, airplanes wait either to take off or land and so on.
+
+In general, a queue is formed at a production/operation system when either customers (human beings or physical entities) requiring service wait because number of customers exceeds the number of service facilities, or service facilities do not work efficiently/take more time than prescribed to serve a customer.
+
+Queuing theory can be applied to a variety of situations where it is not possible to accurately predict the arrival rate (or time) of customers and service rate (or time) of service facility or facilities. In particular, it can be used to determine the level of service (either the service rate or the number of service facilities) that balances the following two conflicting costs:
+
+- cost of offering the service
+- cost incurred due to delay in offering service
+
+The first cost is associated with the service facilities and their operation, and the second represents the cost of customers waiting for service.
+
+![example of queuing](./images/Screenshot%202025-05-25%20at%2006.50.15.png)
+
 ### 4.1.2 Historical Background
 
 Queuing theory originated from the work of Danish mathematician A.K. Erlang in 1909 while working for the Copenhagen Telephone Company. Erlang was analyzing congestion and waiting times occurring in the completion of telephone calls. His pioneering work is now considered the foundation of queuing theory and traffic engineering.
 
 ## 4.2 ELEMENTS OF QUEUING THEORY
 
+![queue](./images/Screenshot%202025-05-25%20at%2006.50.36.png)
+
 ### 4.2.1 Arrival Process
 
 The arrival process describes how customers arrive at the service facility:
 
 1. **Source population** - Can be finite or infinite
-   - *Finite*: Limited number of potential customers (e.g., machines needing repair in a factory)
-   - *Infinite*: Unlimited potential customers (e.g., customers at a supermarket checkout)
+   - *Finite*: Limited number of potential customers (e.g., machine operator responsible only to handle 5 machines, salesman responsible to handle limited number of customers, etc.)
+   - *Infinite*: Unlimited potential customers (e.g., customers at a banks, supermarkets, petrol pump, ticket counter, cinema halls, restaurants, etc.)
 
 2. **Arrival pattern** - Usually described by:
    - *Arrival rate (λ)*: Average number of arrivals per unit time
