@@ -18,7 +18,7 @@ Queuing theory can be applied to a variety of situations where it is not possibl
 
 The first cost is associated with the service facilities and their operation, and the second represents the cost of customers waiting for service.
 
-![example of queuing](./images/Screenshot%202025-05-25%20at%2006.50.15.png)
+![example of queuing](../images/Screenshot%202025-05-25%20at%2006.50.15.png)
 
 ### 4.1.2 Historical Background
 
@@ -26,7 +26,7 @@ Queuing theory originated from the work of Danish mathematician A.K. Erlang in 1
 
 ## 4.2 ELEMENTS OF QUEUING THEORY
 
-![queue](./images/Screenshot%202025-05-25%20at%2006.50.36.png)
+![queue](../images/Screenshot%202025-05-25%20at%2006.50.36.png)
 
 ### 4.2.1 Arrival Process
 
