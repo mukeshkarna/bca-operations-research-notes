@@ -1,5 +1,28 @@
 # ABC Analysis - Restaurant Example (Complete Step-by-Step Solution)
 
+Below is a detailed step-by-step solution for the Restaurant ABC Analysis example, showing all formulas and calculations clearly.I've provided a complete step-by-step solution for the Restaurant ABC Analysis example. Here are the key points to understand:
+
+## Key Formulas Used:
+1. **Annual Value = Annual Usage × Cost per unit**
+2. **% of Total Value = (Item Annual Value / Total Annual Value) × 100**
+3. **Cumulative % = Previous Cumulative % + Current Item %**
+4. **% of Items = (1 / Total Number of Items) × 100**
+
+## Classification Process:
+1. **Calculate annual value** for each item
+2. **Sort items** in descending order of annual value
+3. **Calculate percentages** and cumulative percentages
+4. **Apply ABC rules**:
+   - A Items: ~70-80% of value (usually 10-20% of items)
+   - B Items: ~15-20% of value (usually ~30% of items)  
+   - C Items: ~5-10% of value (usually 50-60% of items)
+
+## Final Results:
+- **A Items:** 5 items (33.33%) representing 75.50% of value ($124,500)
+- **B Items:** 4 items (26.67%) representing 16.68% of value ($27,500)
+- **C Items:** 6 items (40.00%) representing 7.82% of value ($12,900)
+
+
 ## Given Data:
 A restaurant analyzes its 15 key ingredients for ABC classification:
 
@@ -262,3 +285,5 @@ Remaining items:
 - **Focus on reducing ordering frequency**
 
 This classification helps the restaurant focus their inventory management efforts where they will have the most financial impact.
+
+The key insight is that just 5 ingredients (Beef, Salmon, Chicken, Lobster, Pork) account for over 75% of the restaurant's ingredient costs, so these require the most careful inventory management attention.
